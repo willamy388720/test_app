@@ -47,6 +47,7 @@ group :development, :test do
   gem 'webmock'
   gem 'rubocop-rspec'
   gem 'vcr'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
