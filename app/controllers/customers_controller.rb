@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :authenticate_member!, except: [:index]
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -69,6 +70,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:name, :email)
+      params.require(:customer).permit(:name, :email, :address)
     end
 end
